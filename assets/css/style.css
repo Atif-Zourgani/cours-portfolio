@@ -1,0 +1,241 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --black: rgba(1, 1, 1, 1);
+    --bcArticle: rgba(1, 1, 1, 0.724);
+    --neon: rgb(97, 157, 235);
+    --neonStart:rgba(97, 157, 235, 0.303);
+	--white: rgba(255, 255, 255, 1);
+    --purple: rgb(163, 40, 184);
+    --purpleStart: rgba(162, 40, 184, 0.281);
+  }
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+@font-face {
+    font-family: 'bold';
+    src: url('../font/static/OpenSans-Bold.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'medium';
+    src: url('../font/static/OpenSans-Medium.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'light';
+    src: url('../font/static/OpenSans-Light.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'neon';
+    src: url('../font/neon.otf') format('truetype'); 
+}
+body {
+    position: relative!important;
+    font-family: 'light', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--black);
+    color: var(--neon);
+}
+h1, h2, h3 {
+    letter-spacing: 3px;
+}
+h1 {
+    font-size: 28px; 
+}
+h2, h3 {
+    font-size: 18px;
+    font-family: 'neon', sans-serif;
+}
+
+.titleContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'neon', sans-serif;
+    color: var(--purple);
+    text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor;
+    animation-name: titleAnimation;
+    animation-duration: 4s;
+}
+.displayNone{
+    display: none;
+}
+.rotate {
+    display: inline-block;
+    transform: rotate(30deg);
+    animation-duration: 4.4s;
+    animation-name: XRotate; 
+}
+.onOffLight {
+    animation-name: onOffLight;
+    animation-duration: 6s;
+}
+/* --------------------section------------------------- */
+.sectionContainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border: var(--neon) solid 4px;
+    padding: 15px 22px;
+    border-radius: 4px;
+    text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--neon), 0 0 0.5em 0 var(--neon);
+    animation-name: sectionOn;
+    animation-duration: 6s;
+}
+.sectionContainer::before {
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	background: var(--neon);
+	top: 120%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	transform: perspective(1.2em) rotateX(40deg) scale(1.5, 0.5);
+	filter: blur(1.50em);
+	opacity: 0.7;
+	transition: transform 0.5s linear;
+}
+.sectionContainer::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	box-shadow: 0 0 4em 0.6em var(--neon), 0 0 1em 0.2em var(--white);
+	opacity: 0;
+	background: var(--neon);
+	z-index: -1;
+	transition: opacity 0.5s linear;
+}
+.sectionContainer:hover,
+.sectionContainer:focus {
+	color: var(--black);
+	text-shadow: none;
+}
+.sectionContainer:hover::before,
+.sectionContainer:focus::before {
+	opacity: 1;
+	transform: perspective(0.8em) rotateX(25deg) scale(1.5, 0.6);
+	transition: transform 0.5s linear;
+}
+.sectionContainer:hover::after,
+.sectionContainer:focus::after {
+	opacity: 1;
+}
+.front {
+    top: 25%;
+    left: 20%;
+
+}
+.back {
+    top: 50%;
+    left: 15%;
+}
+.database {
+    top: 75%;
+    left: 20%;
+}
+.formateur {
+    top: 25%;
+    left: 80%;
+}
+.aboutMe {
+    top: 50%;
+    left: 85%;
+}
+.contact {
+    top: 75%;
+    left: 80%;
+}
+/* --------------------article------------------------- */
+.articleContainer {
+    position: fixed;
+    padding: 30px;
+    background-color: var(--bcArticle);
+    backdrop-filter: blur(5px);
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-shadow: none;
+    border: solid var(--neon) 4px;
+    overflow: hidden;
+    width: 35%;
+    min-width: 600px;
+    max-height: 90%;
+    overflow: auto;
+    z-index: 100;
+}
+.articlesOn {
+    animation-name: articleEntrance;
+    animation-duration: 3s;
+}
+.articlesOff {
+    animation-name: articleSortance;
+    animation-duration: 3s;
+}
+.ButtonCloseModal {
+    position: absolute;
+    transform: translate(-140%,0);
+    text-shadow: 0 0 0.100em var(--purple), 0 0 0.1em currentColor;
+    top: 0;
+    left: 100%;
+    color: var(--purple);
+    font-size: 35px;
+    font-family: 'neon';
+    z-index: 210;
+    animation-name: buttonClose;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.listeContainer {
+    padding: 8px;
+}
+.listeContainer >li,
+p {
+    padding: 6px 4px;
+    font-size: 14px;
+}
+  
+.responsiveElement {
+    display: none;
+    z-index: 300;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--black);
+    font-family: 'neon';
+    color: var(--neon);
+    letter-spacing: 3px;
+    border: var(--neon) solid 4px;
+    padding: 15px 22px;
+    border-radius: 4px;
+}
+/* --------------------responsive------------------------- */
+
+@media screen and (max-width: 900px) {
+.responsiveElement {
+    display: block;
+}
+}
