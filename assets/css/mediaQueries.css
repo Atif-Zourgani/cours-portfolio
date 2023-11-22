@@ -1,0 +1,52 @@
+/* --------------------responsive------------------------- */
+
+@media screen and (max-width: 970px) {
+    .titleContainer{
+        position: static;
+        transform: translate(0%,0%);
+        width: 100%;
+        padding: 20px 5px 0;
+    }
+    .responsiveFont{
+        font-size: 4vw!important;
+    }
+    /* h1,
+    span,
+    h2{
+        font-size: 4vw!important;
+    } */
+    .imgTitle {
+        width: 70%;
+        min-width: 200px;
+        max-width: 400px;
+        padding: 30px;
+    }
+/*---------------section------------ */
+    .sectionContainer {
+        position: static;
+        transform: translate(0,0);
+        
+    }
+    .sectionContainer::before {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        background: none;
+        transform: none;
+        filter: none;
+        opacity: 0;
+        transition: none;
+    }
+    .articleContainer {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        min-width: 50px;
+        
+    }
+    .ButtonCloseModal {
+        position: sticky;
+        font-size: 30px!important;
+    }
+    }

@@ -8,10 +8,10 @@
 :root {
     --black: rgba(1, 1, 1, 1);
     --bcArticle: rgba(1, 1, 1, 0.724);
-    --neon: rgb(97, 157, 235);
+    --neon: rgb(160, 187, 224);
     --neonStart:rgba(97, 157, 235, 0.303);
 	--white: rgba(255, 255, 255, 1);
-    --purple: rgb(163, 40, 184);
+    --purple: rgb(252, 183, 52);
     --purpleStart: rgba(162, 40, 184, 0.281);
   }
 ul, ol {
@@ -58,6 +58,7 @@ h1, h2, h3 {
 }
 h1 {
     font-size: 28px; 
+    white-space: nowrap;
 }
 h2, h3 {
     font-size: 18px;
@@ -66,6 +67,8 @@ h2, h3 {
 
 .titleContainer {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -73,7 +76,7 @@ h2, h3 {
     color: var(--purple);
     text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor;
     animation-name: titleAnimation;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 .displayNone{
     display: none;
@@ -81,12 +84,19 @@ h2, h3 {
 .rotate {
     display: inline-block;
     transform: rotate(30deg);
-    animation-duration: 4.4s;
+    animation-duration: 2.2s;
     animation-name: XRotate; 
 }
 .onOffLight {
     animation-name: onOffLight;
-    animation-duration: 6s;
+    animation-duration: 3s;
+}
+.imgTitle {
+    width: 400px;
+    padding: 30px;
+}
+.spanFirstTitle {
+    font-size: 20px;
 }
 /* --------------------section------------------------- */
 .sectionContainer {
@@ -99,7 +109,8 @@ h2, h3 {
     text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
     box-shadow: inset 0 0 0.5em 0 var(--neon), 0 0 0.5em 0 var(--neon);
     animation-name: sectionOn;
-    animation-duration: 6s;
+    animation-duration: 3s;
+    white-space: nowrap;
 }
 .sectionContainer::before {
 	pointer-events: none;
@@ -173,7 +184,7 @@ h2, h3 {
     position: fixed;
     padding: 30px;
     background-color: var(--bcArticle);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
@@ -188,11 +199,11 @@ h2, h3 {
 }
 .articlesOn {
     animation-name: articleEntrance;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 .articlesOff {
     animation-name: articleSortance;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 .ButtonCloseModal {
     position: absolute;
@@ -205,7 +216,7 @@ h2, h3 {
     font-family: 'neon';
     z-index: 210;
     animation-name: buttonClose;
-    animation-duration: 1.5s;
+    animation-duration: 0.75s;
     animation-iteration-count: infinite;
 }
 
@@ -216,26 +227,4 @@ h2, h3 {
 p {
     padding: 6px 4px;
     font-size: 14px;
-}
-  
-.responsiveElement {
-    display: none;
-    z-index: 300;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: var(--black);
-    font-family: 'neon';
-    color: var(--neon);
-    letter-spacing: 3px;
-    border: var(--neon) solid 4px;
-    padding: 15px 22px;
-    border-radius: 4px;
-}
-/* --------------------responsive------------------------- */
-
-@media screen and (max-width: 900px) {
-.responsiveElement {
-    display: block;
-}
 }
