@@ -117,6 +117,17 @@ h2, h3 {
 .spanFirstTitle {
     font-size: 20px;
 }
+.avatarImg {
+    width: 80px;
+    position: absolute;
+    transform: translate(-50%,-100%);
+    top: 0;
+    left: 50%;
+}
+strong {
+    color: var(--purple);
+    font-size: 16px;
+}
 /* --------------------section------------------------- */
 .sectionContainer {
     position: absolute;
@@ -220,6 +231,15 @@ h2, h3 {
 }
 .contactLink {
     color: var(--purple);
+}
+.competencesFormateur {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.competencesFormateur > li {
+    padding: 10px 14px;
 }
 /* --------------------article------------------------- */
 .articleContainer {

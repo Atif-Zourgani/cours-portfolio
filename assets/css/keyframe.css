@@ -165,7 +165,18 @@
                 box-shadow: none;
     }
 }
+/*--------mobile-------*/
 
+@keyframes sectionOnMobil {
+    from{
+        color: black;
+        box-shadow: none;
+    }
+    20%{
+        color: black;
+        box-shadow: none;
+    }
+}
 
 /* -----------article animation ---------------------- */
 
