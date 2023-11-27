@@ -11,7 +11,7 @@
     --neon: rgb(160, 187, 224);
     --neonStart:rgba(97, 157, 235, 0.303);
 	--white: rgba(255, 255, 255, 1);
-    --purple: rgb(252, 183, 52);
+    --purple: rgb(182, 19, 247);
     --purpleStart: rgba(162, 40, 184, 0.281);
   }
 ul, ol {
@@ -77,6 +77,7 @@ h2, h3 {
     text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor;
     animation-name: titleAnimation;
     animation-duration: 2s;
+    /* padding: 0 0 150px; */
 }
 .displayNone{
     display: none;
@@ -111,6 +112,7 @@ h2, h3 {
     animation-name: sectionOn;
     animation-duration: 3s;
     white-space: nowrap;
+    width: 250px;
 }
 .sectionContainer::before {
 	pointer-events: none;
