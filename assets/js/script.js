@@ -17,7 +17,16 @@ function openCloseModals(articleEvent){
             } 
         }
     }
-    articles[articleEvent].classList.toggle('displayNone');
+    if(articleEvent === 'closes'){
+        return;
+    }else{
+        articles[articleEvent].classList.toggle('displayNone');
+    }
+    
+}
+
+function elementInCollection(element, collection) {
+    return Array.from(collection).some(item => item === element);
 }
 
 sections.forEach((section, i) => {
@@ -31,3 +40,13 @@ buttonCloseModals.forEach((button, i) => {
         openCloseModals(i)
     });
 });
+
+window.addEventListener('click', (e)=>{
+    const clickedElement = e.target;
+
+    const isOutsideCollections = !elementInCollection(clickedElement, articles) && !elementInCollection(clickedElement, sections);
+
+    if (isOutsideCollections) {
+        openCloseModals('closes');
+    }
+})

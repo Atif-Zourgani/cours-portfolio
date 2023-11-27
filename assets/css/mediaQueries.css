@@ -1,6 +1,10 @@
 /* --------------------responsive------------------------- */
 
 @media screen and (max-width: 970px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
     .titleContainer{
         position: static;
         transform: translate(0%,0%);
