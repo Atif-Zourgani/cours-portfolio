@@ -1,4 +1,63 @@
+
 /* -----------title animation ---------------------- */
+
+@-webkit-keyframes titleAnimation {
+    from{
+        text-shadow: none;
+        color: var(--black);
+    }
+    30%{
+        text-shadow: none;
+    }
+    51%{
+        text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor;
+        color: var(--purple);
+        }
+    53%{
+        text-shadow: none;
+        color: var(--black);
+        }
+    54%{
+        text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor;
+        color: var(--purple);
+        }
+    56%{
+        text-shadow: none;
+        color: var(--black);
+    }
+    57%{
+        text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor; 
+        color: var(--purple);
+    }
+    59%{
+        text-shadow: none;
+        color: var(--black);
+        }
+    70%{
+        text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor; 
+        color: var(--purple);
+    }
+    75%{
+        text-shadow: none; 
+        color: var(--black);
+    }
+    85%{
+        text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor; 
+        color: var(--purple);
+    }
+    87%{
+        text-shadow: none; 
+        color: var(--black);
+    }
+    90%{
+        text-shadow: 0 0 0.8em var(--purple), 0 0 0.9em currentColor; 
+        color: var(--purple);
+    }
+    92%{
+        text-shadow: none; 
+        color: var(--black);
+    }
+}
 
 @keyframes titleAnimation {
     from{
@@ -57,20 +116,25 @@
         color: var(--black);
     }
 }
+@-webkit-keyframes XRotate {
+        from{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+        95%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
 @keyframes XRotate {
-        from{transform: rotate(0deg);}
-        95%{transform: rotate(0deg);}
+        from{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+        95%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
 
 /* -----------section animation ---------------------- */
 
-@keyframes sectionOn {
+@-webkit-keyframes sectionOn {
     from{
         border: none;
         color: rgba(255, 255, 255, 0.08);
         text-shadow: none;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
         top: 10%;
         left: 50%;
     }
@@ -78,12 +142,50 @@
         border: none;
         color: rgba(255, 255, 255, 0.08);
         text-shadow: none;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+}
+
+@keyframes sectionOn {
+    from{
+        border: none;
+        color: rgba(255, 255, 255, 0.08);
+        text-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        top: 10%;
+        left: 50%;
+    }
+    90%{
+        border: none;
+        color: rgba(255, 255, 255, 0.08);
+        text-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
 }
 
 
 /* -----------article animation ---------------------- */
+
+@-webkit-keyframes articleEntrance {
+    from{
+        top: -80%;
+        color: transparent;
+        background-color: var(--neonStart);
+        width: 50px;
+        height: 50px;
+    }
+
+    80% {
+        top: 50%;
+        height: 50px;
+        color: transparent;
+        background-color: var(--neonStart);
+    }
+    
+}
 
 @keyframes articleEntrance {
     from{
@@ -103,6 +205,26 @@
     
 }
 
+@-webkit-keyframes articleSortance {
+    from{
+        height: 50px;
+        top: 50%;
+        color: transparent;
+        background-color: var(--neonStart);
+    }
+    75%{
+        top: 180%;
+        color: transparent;
+        background-color: var(--neonStart);
+        width: 50px;
+        height: 50px;
+    }
+    to{
+        top: 180%;
+        height: 50px;
+    }
+}
+
 @keyframes articleSortance {
     from{
         height: 50px;
@@ -120,6 +242,12 @@
     to{
         top: 180%;
         height: 50px;
+    }
+}
+
+@-webkit-keyframes buttonClose{
+    50%{
+        text-shadow: none;
     }
 }
 
