@@ -1,9 +1,7 @@
 const sections = document.querySelectorAll('.sectionContainer');
 const articles = document.querySelectorAll('.articleContainer');
 const buttonCloseModals = document.querySelectorAll('.ButtonCloseModal');
-const p = document.querySelectorAll(p);
 
-console.log(p);
 
 function openCloseModals(articleEvent){
     for (let i = 0; i < articles.length; i++){
