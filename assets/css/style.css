@@ -67,7 +67,11 @@ h2, h3 {
     font-size: 18px;
     font-family: 'neon', sans-serif;
 }
-
+a{
+    text-decoration: none;
+    color: var(--neon);
+    font-size: 0.8em;
+}
 .titleContainer {
     position: absolute;
     display: -webkit-box;
